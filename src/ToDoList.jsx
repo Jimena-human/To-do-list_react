@@ -4,9 +4,9 @@ import React, {useState} from "react";
 function ToDoList(){
     //setear las tareas con setStatus array vacío
     //tarea
-    const [tareas, setTarea] =useState(["almorzar", "comer", "desayunar","comer"]);
+    const [tareas, setTareas] = useState(["almorzar", "comer", "desayunar"]);
     //nueva tarea
-    const[nuevaTarea, setNuevaTarea] =useState([]);
+    const[nuevaTarea, setNuevaTarea] =useState("");
 
     //Funciones a realizar 
     //función para textbox cuando escribimos algo
@@ -18,10 +18,56 @@ function ToDoList(){
 
     //agregar
     function agregarTarea(){
-        setTarea(setNuevaTarea)
+        //si al cortar el espacio vacío es diferente a un string vacío, añade la tarea
+        if(nuevaTarea.trim() !== ""){
+            //spread the current elements of tasks (?) y añade una nueva tarea
+            setTareas(tareas => [...tareas, nuevaTarea]);
+            setNuevaTarea(""); 
+        }
     }
+
+    //eliminar
+    function eliminarTarea(indice){
+    // creamos un nuevo array de tareas actualizadas, filtramos las tareas
+    //el filter method nos provee un elemento y un index (diferente al que ya nos llega)
+    //si el index que nos llega no es estrictamente igual al que tenemos
+    //no nos interesa, sólo el que si matchee
+    //tendremos un array con un elemento faltante
+    //a la lista de tareas le enviamos la actualizada
+
+    /*
+    // let indice2;
+        console.log("seleccioné eliminar");
+        // console.log("indice " + indice2);
+        
+        
+        const tareasActualizadas = tareas.filter(filtrado);
+        //tareas.filter((_, indice2) => indice2 !== indice);
+        function filtrado(elemento, indice2){
+            console.log("entro al filtro");
+            
+            if(indice2 !== indice){
+
+            }
+        }
+        // console.log("indice " + indice2);
+        console.log("tarea seleccionada");
+        console.log("tareas actualizadas; "+ tareasActualizadas);
+        
+        setTareas(tareasActualizadas);
+    */
+    
+
+    }
+
     //subir tarea
     function subirCategoria(indice){
+        if(indice > 0){
+            const listaActualizada = [...tareas];
+            [listaActualizada[indice],listaActualizada[indice-1]] = 
+            [listaActualizada[indice-1],listaActualizada[indice]];
+            setTareas(listaActualizada);
+        }
 
     }
 
@@ -30,23 +76,22 @@ function ToDoList(){
 
     }
 
-    //eliminar
-    function eliminarTarea(indice){
-
-    }
+    // console.log("lista de tareas: "+ tareas);
+    
 
 
     return (
+
         <div className="todo-list">
             {/* input, le enviamos la tarea */}
             <div className="seccionInput">
-            <input type="text" 
-            placeholder="Ingresa una tarea"
-            value={nuevaTarea}
-            onChange={manejoCambioInput}/>
+                <input type="text" 
+                placeholder="Ingresa una tarea"
+                value={nuevaTarea}
+                onChange={manejoCambioInput}/>
 
-            <button className="btnAgregar"
-            onClick={agregarTarea}>Agregar</button>
+                <button className="btnAgregar"
+                onClick={agregarTarea}>Agregar</button>
             </div>
 
             <h2>Tus tareas pendientes</h2>
@@ -59,13 +104,15 @@ function ToDoList(){
                     {tareas.map((tarea, indice) => 
                         <li key={indice}>
                             <span className="texto">{tarea}</span>
-
                             <button className="btnBorrar" 
-                            onClick={eliminarTarea}>Eliminar</button>
+                            onClick={eliminarTarea}>Eliminar  </button>
+
                             <button className="btnSubir"
                             onClick={subirCategoria}>Subir 👆</button>
+
                             <button className="btnBajar"
                             onClick={bajarCategoria}>Bajar 👇  </button>
+                            
                         </li>
                     )} 
                     

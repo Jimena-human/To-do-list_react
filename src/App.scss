@@ -1,0 +1,85 @@
+//Variables entorno
+
+//Ver anidación
+
+
+/* Estilos del archivo App.jsx - react */
+.header{
+    background-color: darkslategrey;
+    display: flex;
+    height: 4em;
+    justify-content: center;
+
+    .titulo{
+        color:#ffff;
+        align-self: center;
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+  }
+
+  
+  /* div -espacio del listado */
+  .body-principal{
+    // background-color: lightgoldenrodyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    /* Estilos del To do */
+  .todo-list{
+    align-items: center;
+    background-color: darkcyan;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 80%;
+
+    .seccionInput{
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+
+        input{
+            width: 80%;
+            height: 2em;
+          
+          }
+          .btnAgregar{
+            background-color: greenyellow;
+            border-radius: 5px;
+            border: none;
+            width: 5em;
+          }
+      }
+      
+      
+      
+    .tareasPendientes{
+        align-self: center;
+        background-color: lightcoral;
+        width: 80%;
+
+        li{
+            display: flex;
+            .texto{
+                flex: 1;
+                // flex-grow: 1;
+                // flex-shrink: 1;
+                // flex-basis: 1;
+            }
+        }
+    }
+      
+    // .botonesTareas,button{
+    //     background-color: lightgreen;
+    // }
+  }
+  
+  
+  
+  }
+  
+  
+  

@@ -8,10 +8,10 @@ function App (){
     <header className='header'>
       <p className='titulo'>To Do - List</p>
     </header>
-    <body className='body-listado'>
+    <div className='body-principal'>
       <h2>Agregar tareas</h2>
       <ToDoList/>
-    </body>
+    </div>
     </div>
 )}
 
