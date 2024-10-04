@@ -23,7 +23,6 @@
 }
 .body-principal .todo-list {
   align-items: center;
-  background-color: darkcyan;
   display: flex;
   flex-direction: column;
   width: 50%;

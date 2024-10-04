@@ -30,7 +30,6 @@
     /* Estilos del To do */
   .todo-list{
     align-items: center;
-    background-color: darkcyan;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -60,6 +59,7 @@
         align-self: center;
         background-color: lightcoral;
         width: 80%;
+        min-height: 700px;
 
         li{
             display: flex;

@@ -35,27 +35,15 @@ function ToDoList(){
     //tendremos un array con un elemento faltante
     //a la lista de tareas le enviamos la actualizada
 
-    /*
+    
     // let indice2;
         console.log("seleccioné eliminar");
         // console.log("indice " + indice2);
         
         
-        const tareasActualizadas = tareas.filter(filtrado);
-        //tareas.filter((_, indice2) => indice2 !== indice);
-        function filtrado(elemento, indice2){
-            console.log("entro al filtro");
-            
-            if(indice2 !== indice){
-
-            }
-        }
-        // console.log("indice " + indice2);
-        console.log("tarea seleccionada");
-        console.log("tareas actualizadas; "+ tareasActualizadas);
-        
+        const tareasActualizadas = tareas.filter((_, indice2) => indice2 !== indice);   
         setTareas(tareasActualizadas);
-    */
+    
     
 
     }
@@ -72,7 +60,27 @@ function ToDoList(){
     }
 
     //bajar tarea
-    function bajarCategoria(indice){
+    function bajarCategoria( indice){
+
+        // console.log("tarea "+ tarea);
+        console.log("indice "+indice);
+
+        if(indice >= 0 ){
+            const listaActualizada = [...tareas];
+            
+            [listaActualizada[indice],listaActualizada[indice+1]]=
+            [listaActualizada[indice+1],listaActualizada[indice]];
+
+            setTareas(listaActualizada);
+        }
+        // if(tarea !== undefined){
+            
+        // }else{
+        //     console.log("es undefined, no baja");
+            
+        // }
+        
+        
 
     }
 
@@ -105,13 +113,13 @@ function ToDoList(){
                         <li key={indice}>
                             <span className="texto">{tarea}</span>
                             <button className="btnBorrar" 
-                            onClick={eliminarTarea}>Eliminar  </button>
+                            onClick={()=>eliminarTarea(indice)}>Eliminar  </button>
 
                             <button className="btnSubir"
-                            onClick={subirCategoria}>Subir 👆</button>
+                            onClick={()=>subirCategoria(indice)}>Subir 👆</button>
 
                             <button className="btnBajar"
-                            onClick={bajarCategoria}>Bajar 👇  </button>
+                            onClick={()=>bajarCategoria(indice)}>Bajar 👇  </button>
                             
                         </li>
                     )} 
