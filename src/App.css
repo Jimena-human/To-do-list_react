@@ -2,13 +2,13 @@
 .header {
   background-color: darkslategrey;
   display: flex;
-  height: 4em;
+  height: 5em;
   justify-content: center;
 }
 .header .titulo {
-  color: white;
+  color: #e8cda6;
   align-self: center;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -20,6 +20,9 @@
   height: 100vh;
   flex-direction: column;
   /* Estilos del To do */
+}
+.body-principal h2 {
+  color: beige;
 }
 .body-principal .todo-list {
   align-items: center;
@@ -45,12 +48,32 @@
 }
 .body-principal .todo-list .tareasPendientes {
   align-self: center;
-  background-color: lightcoral;
+  border-radius: 10px;
   width: 80%;
 }
-.body-principal .todo-list .tareasPendientes li {
-  display: flex;
+.body-principal .todo-list .tareasPendientes ol {
+  padding-left: 0;
 }
-.body-principal .todo-list .tareasPendientes li .texto {
+.body-principal .todo-list .tareasPendientes ol li {
+  display: flex;
+  background-color: #e8cda6;
+  border: 2px solid #c9b08d;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+.body-principal .todo-list .tareasPendientes ol li .texto {
   flex: 1;
+  font-size: large;
+}
+.body-principal .todo-list .tareasPendientes ol li button {
+  margin: 2px;
+  border: none;
+  border-radius: 5px;
+}
+.body-principal .todo-list .tareasPendientes ol li .btnBorrar {
+  background-color: lightsalmon;
+}
+.body-principal .todo-list .tareasPendientes ol li .btnSubir, .body-principal .todo-list .tareasPendientes ol li .btnBajar {
+  background-color: lightskyblue;
 }/*# sourceMappingURL=App.css.map */

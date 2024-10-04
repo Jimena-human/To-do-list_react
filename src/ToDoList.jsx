@@ -65,7 +65,7 @@ function ToDoList(){
         // console.log("tarea "+ tarea);
         console.log("indice "+indice);
 
-        if(indice >= 0 ){
+        if(indice < tareas.length - 1){
             const listaActualizada = [...tareas];
             
             [listaActualizada[indice],listaActualizada[indice+1]]=

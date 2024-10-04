@@ -7,13 +7,13 @@
 .header{
     background-color: darkslategrey;
     display: flex;
-    height: 4em;
+    height: 5em;
     justify-content: center;
 
     .titulo{
-        color:#ffff;
+        color:#e8cda6;
         align-self: center;
-        font-size: 1.7rem;
+        font-size: 2rem;
         font-weight: bold;
       }
   }
@@ -21,12 +21,15 @@
   
   /* div -espacio del listado */
   .body-principal{
-    // background-color: lightgoldenrodyellow;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    h2{
+      color: beige;
+    }
+
     /* Estilos del To do */
   .todo-list{
     align-items: center;
@@ -34,6 +37,7 @@
     flex-direction: column;
     width: 50%;
     height: 80%;
+    
 
     .seccionInput{
         width: 90%;
@@ -57,28 +61,40 @@
       
     .tareasPendientes{
         align-self: center;
-        background-color: lightcoral;
+        border-radius: 10px;
         width: 80%;
-        min-height: 700px;
-
-        li{
+        ol{
+          padding-left: 0;
+          li{
             display: flex;
-            .texto{
-                flex: 1;
-                // flex-grow: 1;
-                // flex-shrink: 1;
-                // flex-basis: 1;
-            }
+            background-color: #e8cda6;
+            border: 2px solid #c9b08d;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+              .texto{
+                  flex: 1;
+                  font-size: large;
+              }
+              button{
+                margin: 2px;
+                border: none;
+                border-radius: 5px;
+              }
+              .btnBorrar{
+                background-color: lightsalmon;
+              }
+              .btnSubir, .btnBajar{
+                background-color: lightskyblue;
+              }
+        }
+
+        
         }
     }
       
-    // .botonesTareas,button{
-    //     background-color: lightgreen;
-    // }
   }
-  
-  
-  
+    
   }
   
   
